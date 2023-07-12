@@ -28,7 +28,9 @@ Progress.belongsTo(User, {
     foreignKey: 'task_id'
 });
 
-
+Task.hasMany(Progress, {
+    foreignKey: 'task_id',
+})
 
 module.exports = {
     User,

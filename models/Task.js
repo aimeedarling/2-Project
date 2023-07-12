@@ -26,4 +26,4 @@ Task.init(
     }
 );
 
-module.exports = User;
+module.exports = Task;
