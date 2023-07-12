@@ -1,34 +1,37 @@
 // import models
-const Product = require('./Product');
-const Category = require('./Category');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
+const User = require('./User');
+const Task = require('./Task');
+const Progress = require('./Progress');
 
-// Products belongsTo Category
-Product.belongsTo(Category, {
-  foreignKey: 'category_id',
+
+// 
+User.hasMany(Task, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
-// Categories have many Products
-Category.hasMany(Product, {
-  foreignKey: 'category_id',
+// 
+Task.hasOne(User, {
+    foreignKey: 'user_id',
 });
 
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {
-  through: ProductTag,
-  foreignKey: 'product_id'
+// 
+User.hasMany(Progress, {
+    through: Task,
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
-// Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product, {
-  through: ProductTag,
-  foreignKey: 'tag_id'
+// 
+Progress.belongsTo(User, {
+    through: Task,
+    foreignKey: 'task_id'
 });
+
+
 
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+    User,
+    Task,
+    Progress,
 };
