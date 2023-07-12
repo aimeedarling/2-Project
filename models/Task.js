@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User extends Model {}
+class Task extends Model {}
 
 Task.init(
     {
@@ -11,46 +11,18 @@ Task.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        task_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true,
-        },
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8],
-        },
-    },
-  },
-  {
-    
-    hooks: {
-     
-        beforeCreate: async (newUserData) => {
-            
-            newUserData.email = await newUserData.email.toLowerCase();
-            return newUserData;
         },
         
-        beforeUpdate: async (updatedUserData) => {
-            updatedUserData.email = await updatedUserData.email.toLowerCase();
-            return updatedUserData;
-        },
     },
+    {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'task',
     }
 );
 
