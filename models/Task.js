@@ -23,18 +23,18 @@ User.init(
                 isEmail: true,
         },
         },
-            password: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [8],
         },
-        },
     },
-    {
-        
-        hooks: {
-        
+  },
+  {
+    
+    hooks: {
+     
         beforeCreate: async (newUserData) => {
             
             newUserData.email = await newUserData.email.toLowerCase();
@@ -46,7 +46,7 @@ User.init(
             return updatedUserData;
         },
     },
-    sequelize,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
