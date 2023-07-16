@@ -1,19 +1,19 @@
 <div>
 <p>TODO</p>   
-{{#each .}}
-{{todos.task_name}}
+{{#each todos}}
+<li>{{this}}</li>
 {{/each}}
 </div>
 <div>
 <p>In-Progress</p>
-{{#each .}}
-{{inProgress.task_name}}
+{{#each inProgress}}
+<li>{{this}}</li>
 {{/each}}
 </div>
 
 <div>
 <p>Completed</p>
-{{#each .}}
-{{completed.task_name}}
+{{#each completed}}
+<li>{{this}}</li>
 {{/each}}
 </div>
