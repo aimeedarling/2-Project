@@ -15,6 +15,11 @@ Task.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        progress:{
+            type: DataTypes.ENUM('todo', 'in-progress', 'completed'),
+            defaultValue: 'todo',
+            allowNull: false
+        }
         
     },
     {
