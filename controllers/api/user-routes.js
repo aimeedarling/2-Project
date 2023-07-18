@@ -1,16 +1,23 @@
-const router = require('express').Router()
-const { User } = require('../../models')
+const router = require('express').Router();
+const bcrypt = require('bcrypt');
+const { User } = require('../../models');
 
 //create user
 router.post('/', async (req,res) => {
     try {
-        const newUser = await User.create(req.body);
+        const newUser = req.body
+          // hash the password from 'req.body' and save to newUser
+        newUser.password = await bcrypt.hash(req.body.password, 10)
 
+        const userData = await User.create(newUser);
         req.session.save(() =>{
-            req.session.user_id = newUser.id;
+            req.session.user_id = userData.toJSON().id;
             req.session.logged_in = true;
+        res.status(200).json(userData)
 
-            res.status(200).json(newUser)
+
+        // await User.create(req.body);
+        //     res.status(200).json(newUser)
         })
         
     } catch (error) {
@@ -26,14 +33,17 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'Incorrect email or password, please try again'})
             return
         }
-        const validPassword = await userData.checkPassword(req.body.password)
+        const validPassword = await bcrypt.compare(
+            req.body.password,
+            userData.password
+        )
 
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect email or password, please try again'})
-            return
+            return;
         }
         
-        req.sessionID.save(() => {
+        req.session.save(() => {
             req.session.user_id = userData.id
             req.session.logged_in = true
 
@@ -48,7 +58,7 @@ router.post('/login', async (req, res) => {
 
 //logout user
 
-router.post('./logout', (req,res) => {
+router.post('/logout', (req,res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end()
