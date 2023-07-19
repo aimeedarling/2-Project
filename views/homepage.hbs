@@ -1,76 +1,70 @@
+<!---create tasks--->
+<section>
+  <h2>Create A Task:</h2>
 
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
+  <div class="input">
+    <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
+    <span class="input-group-btn">
+      <button id="create" class="btn btn-primary" type="button" name="submit">Create</button>
+    </span>
+  </div>
+</section>
+
+<!---total tasks to-do--->
+<section>
+  {{#if tasks}}
+  <h2>Tasks To Complete:</h2>
+  {{#each tasks}}
+  {{#unless completed}}
+  <div class="task clearfix">
+    <span>{{task}}</span>
+    <div class="btn-group pull-right" role="group" aria-label="...">
+      <button data-id="{{_id}}" type="button" class="btn-complete">Completed</button>
+      <button data-id="{{_id}}" type="button" class="btn-inprogress">In-Progress</button>
+      <button data-id="{{_id}}" type="button" class="btn-edit">Edit</button>
+      <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
+    </div>
+  </div>
+  {{/unless}}
+  {{/each}}
+  {{/if}}
+</section>
+
+
+<!---in-progress tasks--->
+<section>
+  <div class="row">
+    <hr>
+    <h2>Tasks In-Progress:</h2>
+    {{#each tasks}}
+    {{#if completed}}
+    <div class="task clearfix">
+      <span>{{task}}</span>
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
+      </div>
+    </div>
     {{/if}}
-  </header>
-
-  <main>
-    <!---create tasks--->
-    <section>
-      <h2>Create A Task:</h2>
-
-      <div class="input">
-        <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
-        <span class="input-group-btn">
-          <button id="create" class="btn btn-primary" type="button" name="submit">Create</button>
-        </span>
-      </div>
-    </section>
-
-    <!---total tasks to-do--->
-    <section>
-      {{#if tasks}}
-      <h2>Tasks To Complete:</h2>
-      {{#each tasks}}
-      {{#unless completed}}
-      <div class="task clearfix">
-        <span>{{task}}</span>
-        <div class="btn-group pull-right" role="group" aria-label="...">
-          <button data-id="{{_id}}" type="button" class="btn-complete">Completed</button>
-          <button data-id="{{_id}}" type="button" class="btn-inprogress">In-Progress</button>
-          <button data-id="{{_id}}" type="button" class="btn-edit">Edit</button>
-          <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
-        </div>
-      </div>
-      {{/unless}}
-      {{/each}}
-    </section>
+    {{/each}}
+  </div>
+</section>
 
 
-    <!---in-progress tasks--->
-    <section>
-      <div class="row">
-        <hr>
-        <h2>Tasks In-Progress:</h2>
-        {{#each tasks}}
-        {{#if completed}}
-        <div class="task clearfix">
-          <span>{{task}}</span>
-          <div class="btn-group pull-right" role="group" aria-label="...">
-            <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
-          </div>
-        </div>
-        {{/if}}
-        {{/each}}
-      </div>
-    </section>
+<!---completed tasks--->
+<section>
 
+  <hr>
+  <h2>Completed Tasks:</h2>
+  {{#each tasks}}
+  {{#if completed}}
+  <div class="task clearfix">
+    <span>{{task}}</span>
+    <div class="btn-group pull-right" role="group" aria-label="...">
+      <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+</section>
 
-    <!---completed tasks--->
-    <section>
-
-      <hr>
-      <h2>Completed Tasks:</h2>
-      {{#each tasks}}
-      {{#if completed}}
-      <div class="task clearfix">
-        <span>{{task}}</span>
-        <div class="btn-group pull-right" role="group" aria-label="...">
-          <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
-        </div>
-        {{/if}}
-        {{/each}}
-      </div>
-    </section>
+<script src="/js/create-task.js"></script>
