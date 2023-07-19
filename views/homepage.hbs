@@ -1,64 +1,78 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
-      <h1 class="page-header text-center">To-Do List</h1>
-      <h2>Create A Task:</h2>
-      <form action="/api/create" method="POST">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Pal</title>
+    <link rel="stylesheet" href="/css/jass.css">
+</head>
+
+<body>
+    <header class = "display-flex justify-space-between align-center p-2">
+        <h1>To-Do List</h1>
+        {{#if logged_in}}
+        <nav>
+        <button class="btn" id="logout">logout</button>
+        </nav>
+        {{/if}}
+    </header>
+
+    <main>
+        <!---create tasks--->
+        <section>
+            <h2>Create A Task:</h2>
+            <form action="/api/create" method="POST">
         <div class="input">
           <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
           <span class="input-group-btn">
             <button id="create" class="btn btn-primary" type="button" name="submit">Create</button>
-          </span>
-        </div>
-      </form>
-    </div>
-  </div>
+        </section>
 
-  {{#if tasks}}
-    <div class="row">
-      <div class="col-lg-6 col-lg-offset-3">
-        
-        <hr>
+        <!---total tasks to-do--->
+        <section>
+        {{#if tasks}}
         <h2>Tasks To Complete:</h2>
-        
         {{#each tasks}}
           {{#unless completed}}
             <div class="task clearfix">
               <span>{{task}}</span>
               <div class="btn-group pull-right" role="group" aria-label="...">
                 <button data-id="{{_id}}" type="button" class="btn-complete">Completed</button>
-                <button data-id="{{_id}}" type="button" class="btn-in-progress">In-Progress</button>
+                <button data-id="{{_id}}" type="button" class="btn-inprogress">In-Progress</button>
                 <button data-id="{{_id}}" type="button" class="btn-edit">Edit</button>
-                <button data-id="{{_id}}" type="button" class="btn btn-danger delete">Delete</button>
+                <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
               </div>
             </div>
           {{/unless}}
         {{/each}}
-
       </div>
     </div>
+    </section>
+        
 
-    <div class="row">
-      <div class="col-lg-6 col-lg-offset-3">
+        <!---in-progress tasks--->
+        <section>
+            <div class="row">
         <hr>
-        <h2>In-Progress Tasks:</h2>
+        <h2>Tasks In-Progress:</h2>
         {{#each tasks}}
           {{#if completed}}
             <div class="task clearfix">
               <span>{{task}}</span>
               <div class="btn-group pull-right" role="group" aria-label="...">
-                <button data-id="{{_id}}" type="button" class="btn delcomplete">Delete</button>
+                <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
               </div>
             </div>
           {{/if}}
         {{/each}}
       </div>
     </div>
-  {{/if}}
+    </section>
 
-
-    <div class="row">
+        
+        <!---completed tasks--->
+        <div class="row">
       <div class="col-lg-6 col-lg-offset-3">
         <hr>
         <h2>Completed Tasks:</h2>
@@ -67,13 +81,17 @@
             <div class="task clearfix">
               <span>{{task}}</span>
               <div class="btn-group pull-right" role="group" aria-label="...">
-                <button data-id="{{_id}}" type="button" class="btn btn-danger delcomplete">Delete</button>
+                <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
               </div>
             </div>
           {{/if}}
         {{/each}}
       </div>
     </div>
-  {{/if}}
 
-</div>
+        </section>
+    </main>
+
+
+
+
