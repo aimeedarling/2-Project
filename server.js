@@ -34,7 +34,13 @@ const sess = {
     })
 };
 
-app.use(session(sess));
+app.use(
+    session({
+        secret: 'your-secret-key',
+        resave: false,
+        saveUninitialized: true,
+        })
+    );
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
