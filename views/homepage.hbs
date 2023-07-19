@@ -1,97 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!---create tasks--->
+<section>
+  <h2>Create A Task:</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productivity Pal</title>
-    <link rel="stylesheet" href="/css/jass.css">
-</head>
+  <div class="input">
+    <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
+    <span class="input-group-btn">
+      <button id="create" class="btn btn-primary" type="button" name="submit">Create</button>
+    </span>
+  </div>
+</section>
 
-<body>
-    <header class = "display-flex justify-space-between align-center p-2">
-        <h1>To-Do List</h1>
-        {{#if logged_in}}
-        <nav>
-        <button class="btn" id="logout">logout</button>
-        </nav>
-        {{/if}}
-    </header>
+<!---total tasks to-do--->
+<section>
+  {{#if tasks}}
+  <h2>Tasks To Complete:</h2>
+  {{#each tasks}}
+  {{#unless completed}}
+  <div class="task clearfix">
+    <span>{{task}}</span>
+    <div class="btn-group pull-right" role="group" aria-label="...">
+      <button data-id="{{_id}}" type="button" class="btn-complete">Completed</button>
+      <button data-id="{{_id}}" type="button" class="btn-inprogress">In-Progress</button>
+      <button data-id="{{_id}}" type="button" class="btn-edit">Edit</button>
+      <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
+    </div>
+  </div>
+  {{/unless}}
+  {{/each}}
+  {{/if}}
+</section>
 
-    <main>
-        <!---create tasks--->
-        <section>
-            <h2>Create A Task:</h2>
-            <form action="/api/create" method="POST">
-        <div class="input">
-          <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
-          <span class="input-group-btn">
-            <button id="create" class="btn btn-primary" type="button" name="submit">Create</button>
-        </section>
 
-        <!---total tasks to-do--->
-        <section>
-        {{#if tasks}}
-        <h2>Tasks To Complete:</h2>
-        {{#each tasks}}
-          {{#unless completed}}
-            <div class="task clearfix">
-              <span>{{task}}</span>
-              <div class="btn-group pull-right" role="group" aria-label="...">
-                <button data-id="{{_id}}" type="button" class="btn-complete">Completed</button>
-                <button data-id="{{_id}}" type="button" class="btn-inprogress">In-Progress</button>
-                <button data-id="{{_id}}" type="button" class="btn-edit">Edit</button>
-                <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
-              </div>
-            </div>
-          {{/unless}}
-        {{/each}}
+<!---in-progress tasks--->
+<section>
+  <div class="row">
+    <hr>
+    <h2>Tasks In-Progress:</h2>
+    {{#each tasks}}
+    {{#if completed}}
+    <div class="task clearfix">
+      <span>{{task}}</span>
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
       </div>
     </div>
-    </section>
-        
+    {{/if}}
+    {{/each}}
+  </div>
+</section>
 
-        <!---in-progress tasks--->
-        <section>
-            <div class="row">
-        <hr>
-        <h2>Tasks In-Progress:</h2>
-        {{#each tasks}}
-          {{#if completed}}
-            <div class="task clearfix">
-              <span>{{task}}</span>
-              <div class="btn-group pull-right" role="group" aria-label="...">
-                <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
-              </div>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div>
+
+<!---completed tasks--->
+<section>
+
+  <hr>
+  <h2>Completed Tasks:</h2>
+  {{#each tasks}}
+  {{#if completed}}
+  <div class="task clearfix">
+    <span>{{task}}</span>
+    <div class="btn-group pull-right" role="group" aria-label="...">
+      <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
     </div>
-    </section>
+    {{/if}}
+    {{/each}}
+  </div>
+</section>
 
-        
-        <!---completed tasks--->
-        <div class="row">
-      <div class="col-lg-6 col-lg-offset-3">
-        <hr>
-        <h2>Completed Tasks:</h2>
-        {{#each tasks}}
-          {{#if completed}}
-            <div class="task clearfix">
-              <span>{{task}}</span>
-              <div class="btn-group pull-right" role="group" aria-label="...">
-                <button data-id="{{_id}}" type="button" class="btn-delete">Delete</button>
-              </div>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div>
-    </div>
-
-        </section>
-    </main>
-
-
-
-
+<script src="/js/create-task.js"></script>

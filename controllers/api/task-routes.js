@@ -5,6 +5,7 @@ const { Task } = require('../../models');
  * This route creates a new task.
  */
 router.post('/', async (req, res) => {
+    console.log(req.body)
     try {
         const newTask = await Task.create(req.body);
         res.status(200).json(newTask);

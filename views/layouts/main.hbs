@@ -9,11 +9,13 @@
 </head>
 
 <body>
-    <header>
-        <h1>title</h1>
+    <header class="display-flex justify-space-between align-center p-2">
+        <h1>Productivity-PAL</h1>
     </header>
     <nav>
-        <a href="/"></a>
+    {{#if logged_in}}
+        <button class="btn" id="logout">logout</button>
+    {{/if}}
     </nav>
     <main>
         <aside>
