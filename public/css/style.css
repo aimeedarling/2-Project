@@ -29,45 +29,6 @@ html {
     flex-direction: row;
     min-height: 100vh;
     justify-content: center;
-<<<<<<< HEAD
-    background-color: white;
-    
-    
-  }
-
-  #login-button {
-    margin-top: 20px;
-
-  }
-
-  .page-title {
-    margin-top: 210px;
-  }
-
-#email-login {
-  margin-bottom: 20px;
-}
-
-#password-login {
-  margin-bottom: 10px;
-}
-
-  #login-text {
-    margin-bottom: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
-  #login-button {
-    display: block;
-    width: 100%;
-    border-radius: 30px 30px 
-  }
-
-  .temp-notice {
-    color: red;
-    margin-top: 40px;
-=======
     background-color: var(--quatrinary);
     
->>>>>>> dd89a17 (changes)
   }
