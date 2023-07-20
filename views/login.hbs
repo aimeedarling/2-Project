@@ -1,40 +1,119 @@
-<div class="row justify-space-between-md">
-    <div class="login-card">
-        <h2 class="page-title">Login</h2>
-        <form class="form login-form">
-            <div class="form-group">
-                <label for="email-login">Email:</label>
-                <input class="form-input" type="text" id="email-login" />
-            </div>
-            <div class="form-group">
-                <label for ="password-login">Password:</label>
-                <input class="form-input" type="password" id="password-login" />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">login</button>
-            </div>
-        </form>
-    </div>
-    <div class="login-card">
-        <h2 class="page-title">Signup</h2>
-        <form class="form signup-form">
-            <div class="form-group">
-                <label for="username-signup">Username:</label>
-                <input class="form-input" type="text" id="username-signup" />
-            </div>
-            <div class="form-group">
-                <label for="email-signup">Email:</label>
-                <input class="form-input" type="text" id="email-signup" />
-            </div>
-            <div class="form-group">
-                <label for="password-signup">Password:</label>
-                <input class="form-input" type="password" id="password-signup" />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">signup</button>
-            </div>
-        </form>
-    </div>
-</div>
+<!DOCTYPE html>
+<html>
 
-<script src="/js/login.js"></script>
+<head>
+    <title>Productivity-PAL</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="has-text-centered">
+
+    <article class="row justify-space-between-md">
+        <section class="login-card">
+
+            <h1 class="is-size-1 has-text-success page-title">Productivity-PAL</h1>
+                <h2 class="is-size-3" id="login-text">Login</h2>
+            
+            <form class="form login-form">
+
+                <section class="control has-icons-left has-icons-right form-group">
+                    {{!-- <input class="form-input" type="text" placeholder="Enter email" id="email-signup"> --}}
+                    <input class="input" type="text" placeholder="Enter email" id="email-login">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fa fa-check"></i>
+                        </span>
+                </section>
+
+
+                <section class="field form-group">
+                    <section class="control has-icons-left has-icons-right">
+                        {{!-- <input class="form-input" type="password" placeholder="Password" id="password-login" /> --}}
+                        <input class="input" type="password" placeholder="Password" id="password-login" />
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-key"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fa fa-check"></i>
+                            </span>
+                    </section>
+
+                </section>
+
+            </form>
+
+        </section>
+            
+
+        <div class="form-group">
+            <button class="button is-primary is-large " type="sumbit" id="login-button">Login</button>
+        </div>
+
+        <p>or</p>
+
+        <section class="signup-link" href="">Sign Up</section>
+        
+
+    </article>
+
+    {{!-- to see sign up --}}
+
+    <p class="temp-notice">Just until SIGN UP PAGE IS DONE</p>
+
+    <form class="field signup-form">
+        <section class="control has-icons-left has-icons-right form-group">
+        {{!-- <input class="form-input" type="text" placeholder="Enter username" id="username-signup"> --}}
+        <input class="form-input" type="text" placeholder="Enter username" id="username-signup">
+            <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+            </span>
+        </section>
+    
+        <section class="control has-icons-left has-icons-right form-group">
+        {{!-- <input class="form-input" type="text" placeholder="Enter email" id="email-login"> --}}
+        <input class="form-input" type="text" placeholder="Enter email" id="email-signup">
+            <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+            </span>
+        </section>
+
+
+        <div class="field form-group">
+            <section class="control has-icons-left has-icons-right">
+                {{!-- <input class="form-input" type="password" placeholder="Password" id="password-login" /> --}}
+                <input class="form-input" type="password" placeholder="Password" id="password-signup" />
+                    <span class="icon is-small is-left">
+                        <i class="fa fa-key"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fa fa-check"></i>
+                    </span>
+            </section>
+
+        </div>
+        </div>
+
+        <div class="form-group">
+        <button class="button is-primary is-large " type="sumbit" id="signup-button">Sign Up</button>
+    </div>
+    </form>
+
+    
+
+
+
+    <script src="/js/login.js"></script>
+
+
+</body>
+
+</html>

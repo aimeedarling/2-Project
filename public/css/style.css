@@ -8,4 +8,61 @@ html {
     height: 100%;
     font-size: 62.5%;
     scroll-behavior: smooth;
+    
 }
+
+:root {
+    --primary: #3d5852;
+    --secondary: #86938f;
+    --tertiary: #5e877f;
+    --quatrinary: #6c6b67;
+    --light: #e3e4e3;
+    --dark: #182c23;
+    --error: rgb(228, 46, 1);
+    --border-radius: 0.3rem;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: white;
+    
+    
+  }
+
+  #login-button {
+    margin-top: 20px;
+
+  }
+
+  .page-title {
+    margin-top: 200px;
+  }
+
+#email-login {
+  margin-bottom: 20px;
+}
+
+#password-login {
+  margin-bottom: 10px;
+}
+
+  #login-text {
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  #login-button {
+    display: block;
+    width: 100%;
+    border-radius: 30px 30px 
+  }
+
+  .temp-notice {
+    color: red;
+    margin-top: 40px;
+  }
