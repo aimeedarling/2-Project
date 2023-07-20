@@ -1,17 +1,31 @@
 <div class="has-text-centered">
-
     {{!-- login section --}}
-
-
     <form class="form login-form">
-        <div class="form-group">
+
+        {{!-- login email --}}
+        <div class="control has-icons-left has-icons-right form-group">
             <label for="email-login">email:</label>
             <input class="form-input" type="text" id="email-login" />
+            <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+            </span>
         </div>
-        <div class="form-group">
+
+        {{!-- login password --}}
+        <div class="control has-icons-left has-icons-right form-group">
             <label for="password-login">password:</label>
             <input class="form-input" type="password" id="password-login" />
+            <span class="icon is-small is-left">
+                <i class="fa fa-key"></i>
+            </span>
+            <span class="icon is-small is-right">
+                <i class="fa fa-check"></i>
+            </span>
         </div>
+        {{!-- login button --}}
         <div class="form-group">
             <button class="btn btn-primary" type="submit" id="login-button">login</button>
         </div>
