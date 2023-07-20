@@ -29,6 +29,7 @@ html {
     flex-direction: row;
     min-height: 100vh;
     justify-content: center;
+<<<<<<< HEAD
     background-color: white;
     
     
@@ -65,4 +66,8 @@ html {
   .temp-notice {
     color: red;
     margin-top: 40px;
+=======
+    background-color: var(--quatrinary);
+    
+>>>>>>> dd89a17 (changes)
   }
