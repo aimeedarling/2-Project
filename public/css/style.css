@@ -8,6 +8,7 @@ html {
     height: 100%;
     font-size: 62.5%;
     scroll-behavior: smooth;
+    
 }
 
 :root {
@@ -28,6 +29,34 @@ html {
     flex-direction: row;
     min-height: 100vh;
     justify-content: center;
-    background-color: var(--quatrinary);
+    background-color: white;
     
+    
+  }
+
+  #login-button {
+    margin-top: 20px;
+  }
+
+  .page-title {
+    margin-top: 200px;
+  }
+
+#email-login {
+  margin-bottom: 20px;
+}
+
+#password-login {
+  margin-bottom: 10px;
+}
+
+  #login-text {
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  #login-button {
+    display: block;
+    width: 100%;
+    border-radius: 30px 30px 
   }
