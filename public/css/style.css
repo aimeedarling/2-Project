@@ -36,7 +36,7 @@ html {
 
   #login-button {
     margin-top: 20px;
-    
+
   }
 
   .page-title {
@@ -60,4 +60,9 @@ html {
     display: block;
     width: 100%;
     border-radius: 30px 30px 
+  }
+
+  .temp-notice {
+    color: red;
+    margin-top: 40px;
   }
