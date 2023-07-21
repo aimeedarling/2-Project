@@ -7,7 +7,11 @@ const { Task } = require('../../models');
 router.post('/', async (req, res) => {
     console.log(req.body)
     try {
-        const newTask = await Task.create(req.body);
+        const newTask = await Task.create({
+            task_name: req.body.task_name,
+            progress: req.body.progress,
+            user_id: req.body.user_id
+        });
         res.status(200).json(newTask);
     } catch (error) {
         res.status(400).json(error);

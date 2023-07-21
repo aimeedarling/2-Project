@@ -19,7 +19,14 @@ Task.init(
             type: DataTypes.ENUM('todo', 'in-progress', 'completed'),
             defaultValue: 'todo',
             allowNull: false
-        }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
         
     },
     {
