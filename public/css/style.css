@@ -1,16 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    
-}
-
 :root {
     --primary: #3d5852;
     --secondary: #86938f;
@@ -21,30 +8,45 @@ html {
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+}
+
   
   body {
     font-family: Arial;
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: white;
-    
+    align-items: center;
   }
 
   .main {
-    margin-top: 300px;
+    margin-top: 4rem;
+    width: 50%;
+
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
   }
 
   .page-title {
-    margin-top: 140px;
+    margin-top: 4rem;
     
-  
-  }
+    }
 
   .login-form {
     justify-self: right;
