@@ -31,38 +31,44 @@ html {
     justify-content: center;
     background-color: white;
     
-    
   }
 
-  #login-button {
-    margin-top: 20px;
-
+  .main {
+    margin-top: 300px;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
   }
 
   .page-title {
-    margin-top: 210px;
+    margin-top: 140px;
+    
+  
   }
 
-#email-login {
-  margin-bottom: 20px;
-}
-
-#password-login {
-  margin-bottom: 10px;
-}
-
-  #login-text {
-    margin-bottom: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
-  #login-button {
-    display: block;
-    width: 100%;
-    border-radius: 30px 30px 
+  .login-form {
+    justify-self: right;
+    
   }
 
   .temp-notice {
-    color: red;
-    margin-top: 40px;
+    font-size: 30px;
+  }
+
+
+  #login-button {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+  }
+
+  #signup-button {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+  }
+
+  
+  #email-login {
+    margin-bottom: 20px;
   }

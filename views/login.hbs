@@ -3,23 +3,26 @@
     <form class="form login-form">
 
         {{!-- login email --}}
+    <div class="field">
+
         <div class="control has-icons-left has-icons-right form-group">
-            <label for="email-login">email:</label>
-            <input class="form-input" type="text" id="email-login" />
-            <span class="icon is-small is-left">
+            {{!-- <label for="email-login">email:</label> --}}
+            <input class="input is-large" type="text" placeholder="email" id="email-login" />
+            <span class="icon is-large is-left">
                 <i class="fa fa-envelope"></i>
             </span>
             <span class="icon is-small is-right">
                 <i class="fa fa-check"></i>
             </span>
         </div>
+    </div>
 
         {{!-- login password --}}
         <div class="control has-icons-left has-icons-right form-group">
-            <label for="password-login">password:</label>
-            <input class="form-input" type="password" id="password-login" />
+            {{!-- <label for="password-login">password:</label> --}}
+            <input class="input is-large" type="password" placeholder="password"  id="password-login" />
             <span class="icon is-small is-left">
-                <i class="fa fa-key"></i>
+                <i class="fa fa-lock"></i>
             </span>
             <span class="icon is-small is-right">
                 <i class="fa fa-check"></i>
@@ -27,12 +30,16 @@
         </div>
         {{!-- login button --}}
         <div class="form-group">
-            <button class="btn btn-primary" type="submit" id="login-button">login</button>
+            <div class="field">
+                <p class="control">
+                    <button class="button is-success is-large" type="submit" id="login-button">login</button>
+                </p>
+            </div>
         </div>
     </form>
 
 
-    <p class="temp-notice">Just until SIGN UP PAGE IS DONE</p>
+    <p class="temp-notice">or</p>
 
     {{!-- SIGNUP form --}}
     <form class="field signup-form">
@@ -40,7 +47,7 @@
         {{!-- form - sign up username --}}
         <section class="control has-icons-left has-icons-right form-group">
             {{!-- <input class="form-input" type="text" placeholder="Enter username" id="username-signup"> --}}
-            <input class="form-input" type="text" placeholder="Enter username" id="username-signup">
+            <input class="input is-large" type="text" placeholder="Enter username" id="username-signup">
             <span class="icon is-small is-left">
                 <i class="fa fa-user"></i>
             </span>
@@ -53,7 +60,7 @@
 
         <section class="control has-icons-left has-icons-right form-group">
             {{!-- <input class="form-input" type="text" placeholder="Enter email" id="email-login"> --}}
-            <input class="form-input" type="text" placeholder="Enter email" id="email-signup">
+            <input class="input is-large" type="text" placeholder="Enter email" id="email-signup">
             <span class="icon is-small is-left">
                 <i class="fa fa-envelope"></i>
             </span>
@@ -66,7 +73,7 @@
         <div class="field form-group">
             <section class="control has-icons-left has-icons-right">
                 {{!-- <input class="form-input" type="password" placeholder="Password" id="password-login" /> --}}
-                <input class="form-input" type="password" placeholder="Password" id="password-signup" />
+                <input class="input is-large" type="password" placeholder="Password" id="password-signup" />
                 <span class="icon is-small is-left">
                     <i class="fa fa-key"></i>
                 </span>
