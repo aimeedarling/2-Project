@@ -29,6 +29,46 @@ html {
     flex-direction: row;
     min-height: 100vh;
     justify-content: center;
-    background-color: var(--quatrinary);
+    background-color: white;
     
+  }
+
+  .main {
+    margin-top: 300px;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .page-title {
+    margin-top: 140px;
+    
+  
+  }
+
+  .login-form {
+    justify-self: right;
+    
+  }
+
+  .temp-notice {
+    font-size: 30px;
+  }
+
+
+  #login-button {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+  }
+
+  #signup-button {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+  }
+
+  
+  #email-login {
+    margin-bottom: 20px;
   }
