@@ -1,4 +1,6 @@
+{{#if logged_in}}
 <!---create tasks--->
+
 <section>
   <h2>Create A Task:</h2>
   <div class="input">
@@ -10,16 +12,15 @@
 </section>
 
 <!---total tasks to-do--->
-<section>
+<section class = "on-click">
+  
   <h2>Tasks Todo:</h2>
-  {{#each todos as |todo|}}
+  {{#each todos}}
   <div class="task clearfix">
-    <span>{{todo.task_name}}</span>
+    <span>{{task_name}}</span>
     <div class="btn-group pull-right" role="group" aria-label="...">
-      <button data-id="{{todo._id}}" type="button" class="btn-complete">Completed</button>
-      <button data-id="{{todo._id}}" type="button" class="btn-inprogress">In-Progress</button>
-      <button data-id="{{todo._id}}" type="button" class="btn-edit">Edit</button>
-      <button data-id="{{todo._id}}" type="button" class="btn-delete">Delete</button>
+      <button data-id="{{id}}" type="button" class="btn-inprogress">In-Progress</button>
+      <button id="delete-btn" data-id="{{id}}" type="button" class="btn-delete">Delete</button>
     </div>
   </div>
 
@@ -30,12 +31,13 @@
 <section>
   <hr>
   <h2>Tasks In-Progress:</h2>
-  {{#each todos as |todo|}}
+  {{#each inProgress as |todo| }}
   {{#if todo.in_progress}}
   <div class="task clearfix">
-    <span>{{todo.task_name}}</span>
+    <ul>{{todo.task_name}}</ul>
     <div class="btn-group pull-right" role="group" aria-label="...">
-      <button data-id="{{todo._id}}" type="button" class="btn-delete">Delete</button>
+      <button id="completed-btn" data-id="{{id}}" type="button" class="btn-complete">Completed</button>
+      <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
     </div>
   </div>
   {{/if}}
@@ -46,17 +48,19 @@
 <section>
   <hr>
   <h2>Completed Tasks:</h2>
-  {{#each todos as |todo|}}
+  {{#each completed as |todo|}}
   {{#if todo.completed}}
   <div class="task clearfix">
-    <span>{{todo.task_name}}</span>
+    <ul>{{todo.task_name}}</ul>
     <div class="btn-group pull-right" role="group" aria-label="...">
-      <button data-id="{{todo._id}}" type="button" class="btn-delete">Delete</button>
+      <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
     </div>
   </div>
   {{/if}}
   {{/each}}
+  {{/if}}
 </section>
 </main>
 
 <script src="/js/create-task.js"></script>
+<script src="/js/progress.js"></script>
