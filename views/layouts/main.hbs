@@ -12,27 +12,31 @@
 
 <body>
 
-    
-    <header class="display-flex justify-space-between align-center p-2">
-        <h1 class="is-size-1 has-text-success page-title">Productivity-PAL</h1>
 
-    <nav>
-    {{#if logged_in}}
-        <button class="btn" id="logout">logout</button>
-    {{/if}}
+    <nav class="nav-bar">
+        <header class="display-flex justify-space-between align-center p-2">
+            <h1 class="is-size-1 has-text-success page-title">Productivity-PAL</h1>
+
+            {{#if logged_in}}
+            <button class="logout-btn" id="logout">logout</button>
+            {{/if}}
+        </header>
     </nav>
-    </header>
-    
+
     <main class="main">
-        <aside>
-            <h2></h2>
-        </aside>
-        <div class="">
-            {{{body}}}
-        </div>
-        
+
+        {{{body}}}
+
+
     </main>
-    
+
+    <footer>
+        
+    </footer>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
 </body>
 
 </html>

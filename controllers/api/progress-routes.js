@@ -3,10 +3,7 @@ const { Task } = require('../../models');
 
 router.put('/:id', async (req,res) => {
     try {
-        const taskID = req.params.id;
-        const {progress} = req.body;
-
-        await Task.update({progress}, {where: {id: taskID}})
+        await Task.update(req.body, {where:{id:req.params.id}})
         res.status(204).end()
 
     } catch (error) {

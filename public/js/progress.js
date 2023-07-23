@@ -1,7 +1,8 @@
 const inProgressHandler = async (event) => {
     if (event.target.matches('.btn-inprogress')) {
+
         const id = event.target.getAttribute("data-id")
-        const response = await fetch(`/api/task/id`, {
+        const response = await fetch(`/api/task/${id}`, {
             method: 'PUT',
             body: JSON.stringify({progress: 'in-progress'}), 
             headers: { 'Content-Type': 'application/json'}
