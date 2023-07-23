@@ -22,11 +22,11 @@ app.set('view engine', 'hbs');
 const sess = {
     secret: process.env.SECRET,
     cookie: {
-        ///TODO after testing - add cookie settings 
-        // maxAge: 300000,
-        //http: true,
-        //secure: false,
-        //sameSite: "strict"
+        // /TODO after testing - add cookie settings 
+        maxAge: 300000,
+        http: true,
+        secure: false,
+        sameSite: "strict"
     },
     resave: false,
     saveUninitialized: true,
