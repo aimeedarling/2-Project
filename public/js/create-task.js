@@ -10,7 +10,7 @@ const createFormHandler = async (event) => {
     //Pass progress, task_name, user_id in this fetch call
     //get user_id from session
 
-    const response = await fetch('/api/tasks', {
+    const response = await fetch('/api/task', {
         method: 'POST',
         body: JSON.stringify({ 
             task_name: newTask,

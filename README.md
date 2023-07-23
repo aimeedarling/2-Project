@@ -52,8 +52,11 @@ Resources:
 
 [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
-[Session Management in Node.js using ExpressJS and Express Session
-](https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/)
+[Session Management in Node.js using ExpressJS and Express Session](https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/)
+
+[The PUT Method W3 schools](https://www.w3schools.com/tags/ref_httpmethods.asp#:~:text=The%20PUT%20Method&text=The%20difference%20between%20POST%20and,the%20same%20resource%20multiple%20times.)
+
+[ExpressJS - Route paths](http://expressjs.com/en/guide/routing.html#route-paths)
 
 ## License
 
