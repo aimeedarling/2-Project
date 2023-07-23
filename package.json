@@ -8,6 +8,9 @@
     "start": "node server.js",
     "seed": "node seeds/index.js"
   },
+    "engines": {
+      "node": "18.16.0"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -29,4 +32,5 @@
     "nodemon": "^2.0.18",
     "prettier": "^2.1.2"
   }
+
 }
