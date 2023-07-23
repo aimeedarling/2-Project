@@ -1,4 +1,5 @@
-const router = require('express').Router();
+
+
 const { Task } = require('../../models');
 
 
@@ -9,7 +10,7 @@ router.put('/:id', async (req,res) => {
        await Task.update(req.body, {
             where:{id:req.params.id}
         })
-        console.log(request.body.bodydata)
+        console.log(r)
         res.status(204).end()
 
     } catch (error) {
