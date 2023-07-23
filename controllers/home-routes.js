@@ -9,16 +9,16 @@ const withAuth = require('../utils/auth')
 router.get('/', withAuth, async (req, res) => {
     try {
         console.log(req.session)
-        const todoData = await Task.findAll({where: {id: req.session.user_id, progress:'todo' }})
+        const todoData = await Task.findAll({where: {user_id: req.session.user_id, progress:'todo' }})
         console.log(todoData)
         const todos = todoData.map(todo => todo.get({plain: true}))
-        const inProgressData = await Task.findAll({ where: { id: req.session.user_id, progress: 'in-progress' } })
+        const inProgressData = await Task.findAll({ where: { user_id: req.session.user_id, progress: 'in-progress' } })
         const inProgress = inProgressData.map(todo => todo.get({ plain: true }))
 
-        const completedData = await Task.findAll({ where: { id: req.session.user_id, progress: 'completed' } })
+        const completedData = await Task.findAll({ where: { user_id: req.session.user_id, progress: 'completed' } })
         const completed = completedData.map(todo => todo.get({ plain: true }))
 
-        res.render('homepage', {todos, inProgress, completed})
+        res.render('homepage', {todos, inProgress, completed, logged_in: req.session.logged_in})
     } catch (error) {
         res.status(500).json(error)
     }

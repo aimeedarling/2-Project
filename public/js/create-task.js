@@ -5,12 +5,12 @@ const createFormHandler = async (event) => {
     const newTask = document.querySelector("#task").value.trim();
 
     //need to pull this from session
-    const user_id = 1;
+    const user_id = req.session.user_id;
 
     //Pass progress, task_name, user_id in this fetch call
     //get user_id from session
 
-    const response = await fetch('/api/task-routes', {
+    const response = await fetch('/api/task', {
         method: 'POST',
         body: JSON.stringify({ 
             task_name: newTask,
