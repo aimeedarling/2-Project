@@ -20,7 +20,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Please visit the app [here](https://productivity-pal-a83731041d87.herokuapp.com/) and visit the repo [here](https://github.com/aimeedarling/productivity-pal/tree/aimee)
 
 ## Usage
 
@@ -35,6 +35,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## Credits
 
 Collaborators:
+
 [Gregory Williams](https://github.com/GregNasir)
 
 [Kevin Luckhai](https://github.com/KevLuck)
@@ -50,6 +51,9 @@ Resources:
 [Git Cheat-Sheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+
+[Session Management in Node.js using ExpressJS and Express Session
+](https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/)
 
 ## License
 
