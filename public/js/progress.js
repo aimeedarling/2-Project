@@ -2,18 +2,37 @@ const inProgressHandler = async (event) => {
     if (event.target.matches('.btn-inprogress')) {
         const task = event.target;
         const id = task.dataset.id;
-        // const id = event.target.getAttribute("data-id")
         const progress = 'in-progress'
 
         const response = await fetch(`/api/progress/${id}`, {
             method: 'PUT',
-            body: JSON.stringify({ progress }),
+            body: JSON.stringify({progress}),
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
             document.location.replace('/');
         } else {
             alert('failed')
+        }
+    }
+}
+
+const completedHandler = async (event) => {
+    if (event.target.matches('.btn-complete')) {
+
+        const task = event.target;
+        const id = task.dataset.id;
+        console.log(id)
+
+        const response = await fetch(`/api/progress/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ progress: 'completed' }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('oopsies')
         }
     }
 }
@@ -45,4 +64,5 @@ const deleteTaskHandler = async (event) => {
 
 
 document.querySelector('.on-click').addEventListener('click', inProgressHandler)
+document.querySelector('.on-click').addEventListener('click', completedHandler)
 document.querySelector('.on-click').addEventListener('click', deleteTaskHandler)

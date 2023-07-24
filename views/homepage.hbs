@@ -1,30 +1,29 @@
 {{#if logged_in}}
-<!---create tasks--->
+<section class = "on-click">
 
-<section class="create-task">
+<!---create tasks--->
+<section class="card-header-title create-task input">
   <h2>Create A Task:</h2>
-  <div class="input">
+
     <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
     <span class="input-group-btn">
-      <button id="create" class="button is-success is-large" type="button" name="submit">Create</button>
+      <button id="create" class="button is-success is-medium type="button" name="submit">Create</button>
     </span>
-  </div>
+
 </section>
 
-<!---total tasks to-do--->
-<div class="card">
-  
-  <section class = "on-click">
+
+{{!-- .todo section  --}}
+
+  <section>
     <header class="card-header">
       <section class="card-header-title">
         <h3>Tasks Todo:</h3>
       </section>
     </header>
-
     <div class="card-content">
       <div class="content">
         {{#each todos}}
-
         <div class="task clearfix todo-list">
           <span>{{task_name}}</span>
           <div class="btn-group pull-right" role="group" aria-label="...">
@@ -32,54 +31,63 @@
         </div>
       </div>
     </div>
-          <footer class="card-footer">
-            <button data-id="{{id}}" type="button" class="btn-inprogress card-footer-item">In-Progress</button>
-            <button data-id="{{id}}" type="button" class="btn-delete card-footer-item">Delete</button>
-          </footer>
-        
-      
-
-          {{/each}}
-     
-    
-    
+    <footer class="card-footer">
+      <button data-id="{{id}}" type="button" class="btn-inprogress button is-medium is-primary is-outlined card-footer-item">In-Progress</button>
+      <button data-id="{{id}}" type="button" class="btn-delete button is-medium is-primary is-outlined card-footer-item">Delete</button>
+    </footer>
+    {{/each}}
   </section>
-</div>
 
-<!---in-progress tasks--->
-<section>
-  <hr>
-  <h2>Tasks In-Progress:</h2>
-  {{#each inProgress as |todo| }}
-  {{#if todo.in_progress}}
-  <div class="task clearfix">
-    <ul>{{todo.task_name}}</ul>
-    <div class="btn-group pull-right" role="group" aria-label="...">
-      <button id="completed-btn" data-id="{{id}}" type="button" class="btn-complete">Completed</button>
-      <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
+{{!-- in progress section --}}
+  <section>
+    <header class="card-header">
+      <section class="card-header-title">
+        <h3>Tasks In Progress:</h3>
+      </section>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{#each inProgress}}
+        <div class="task clearfix todo-list">
+          <span>{{task_name}}</span>
+          <div class="btn-group pull-right" role="group" aria-label="...">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  {{/if}}
-  {{/each}}
-</section>
+    <footer class="card-footer">
+      <button data-id="{{id}}" type="button" class="btn-complete button is-medium is-primary is-outlined card-footer-item">Complete</button>
+      <button data-id="{{id}}" type="button" class="btn-delete button is-medium is-primary is-outlined card-footer-item">Delete</button>
+    </footer>
+    {{/each}}
+  </section>
+
 
 <!---completed tasks--->
-<section>
-  <hr>
-  <h2>Completed Tasks:</h2>
-  {{#each completed as |todo|}}
-  {{#if todo.completed}}
-  <div class="task clearfix">
-    <ul>{{todo.task_name}}</ul>
-    <div class="btn-group pull-right" role="group" aria-label="...">
-      <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
+  <section>
+    <header class="card-header">
+      <section class="card-header-title">
+        <h3>Completed Tasks:</h3>
+      </section>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{#each completed}}
+        <div class="task clearfix todo-list">
+          <span>{{task_name}}</span>
+          <div class="btn-group pull-right" role="group" aria-label="...">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  {{/if}}
-  {{/each}}
-  {{/if}}
+    <footer class="card-footer">
+      <button data-id="{{id}}" type="button" class="btn-inprogress button is-medium is-primary is-outlined card-footer-item">In-Progress</button>
+      <button data-id="{{id}}" type="button" class="btn-delete button is-medium is-primary is-outlined card-footer-item">Delete</button>
+    </footer>
+    {{/each}}
+
 </section>
-</main>
+{{/if}}
 
 <script src="/js/create-task.js"></script>
 <script src="/js/progress.js"></script>
