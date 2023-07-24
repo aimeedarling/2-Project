@@ -41,6 +41,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve the favicon.ico file from the specified directory
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
