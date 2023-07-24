@@ -58,7 +58,9 @@ Resources:
 
 [ExpressJS - Route paths](http://expressjs.com/en/guide/routing.html#route-paths)
 
-[](https://www.youtube.com/watch?v=xxua85cCiT0&ab_channel=HaryPhamDev)
+[HaryPhamDev - Heroku deploy failure - Top 3 error newbies always have](https://www.youtube.com/watch?v=xxua85cCiT0&ab_channel=HaryPhamDev)
+
+[Umang Agrawal - How to deploy your Node.js & MongoDB app/ REST-API to Heroku using Heroku CLI (.env variables included).](https://www.techmanyu.com/how-to-deploy-your-node-js-7678d8fc575f)
 
 ## License
 
