@@ -4,8 +4,7 @@ const { Task } = require('../../models');
 
 router.put('/:id', async (req, res) => {
     try {
-        // const task = await Task.findById(req.params.id);
-        // console.log(task)
+
         const taskId = req.params.id
         console.log(taskId)
         // if (!task) {

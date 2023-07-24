@@ -1,5 +1,5 @@
 {{#if logged_in}}
-
+<section class = "on-click">
 <!---create tasks--->
 <section class="create-task">
   <h2>Create A Task:</h2>
@@ -13,8 +13,8 @@
 
 
 {{!-- .todo section  --}}
-<div class="card">
-  <section class="on-click">
+
+  <section>
     <header class="card-header">
       <section class="card-header-title">
         <h3>Tasks Todo:</h3>
@@ -36,39 +36,57 @@
     </footer>
     {{/each}}
   </section>
-</div>
 
-<!---in-progress tasks--->
-<section>
-  <hr>
-  <h2>Tasks In-Progress:</h2>
-  {{#each inProgress}}
-  <div class="task clearfix">
-    <ul>{{task_name}}</ul>
-    <div class="btn-group pull-right" role="group" aria-\qlabel="...">
-      <button id="completed-btn" data-id="{{id}}" type="button" class="btn-complete">Completed</button>
-      <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
+{{!-- in progress section --}}
+  <section>
+    <header class="card-header">
+      <section class="card-header-title">
+        <h3>Tasks In Progress:</h3>
+      </section>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{#each inProgress}}
+        <div class="task clearfix todo-list">
+          <span>{{task_name}}</span>
+          <div class="btn-group pull-right" role="group" aria-label="...">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  {{/each}}
-</section>
+    <footer class="card-footer">
+      <button data-id="{{id}}" type="button" class="btn-complete card-footer-item">Complete</button>
+      <button data-id="{{id}}" type="button" class="btn-delete card-footer-item">Delete</button>
+    </footer>
+    {{/each}}
+  </section>
+
 
 <!---completed tasks--->
-<section>
-  <hr>
-  <h2>Completed Tasks:</h2>
-  {{#each completed}}
-  <div class="task clearfix">
-    <ul>{{task_name}}</ul>
-    <div class="btn-group pull-right" role="group" aria-label="...">
-      <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
+  <section>
+    <header class="card-header">
+      <section class="card-header-title">
+        <h3>Completed Tasks:</h3>
+      </section>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{#each completed}}
+        <div class="task clearfix todo-list">
+          <span>{{task_name}}</span>
+          <div class="btn-group pull-right" role="group" aria-label="...">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  {{/each}}
+    <footer class="card-footer">
+      <button data-id="{{id}}" type="button" class="btn-inprogress card-footer-item">In-Progress</button>
+      <button data-id="{{id}}" type="button" class="btn-delete card-footer-item">Delete</button>
+    </footer>
+    {{/each}}
+
 </section>
-</main>
+{{/if}}
 
 <script src="/js/create-task.js"></script>
 <script src="/js/progress.js"></script>
-
-{{/if}}

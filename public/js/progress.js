@@ -1,13 +1,12 @@
 const inProgressHandler = async (event) => {
     if (event.target.matches('.btn-inprogress')) {
-        console.log('click')
         const task = event.target;
         const id = task.dataset.id;
         const progress = 'in-progress'
 
         const response = await fetch(`/api/progress/${id}`, {
             method: 'PUT',
-            body: JSON.stringify({ progress }),
+            body: JSON.stringify({progress}),
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
@@ -20,19 +19,20 @@ const inProgressHandler = async (event) => {
 
 const completedHandler = async (event) => {
     if (event.target.matches('.btn-complete')) {
+
         const task = event.target;
         const id = task.dataset.id;
-        const completed = 'completed'
+        console.log(id)
 
         const response = await fetch(`/api/progress/${id}`, {
             method: 'PUT',
-            body: JSON.stringify({ completed }),
+            body: JSON.stringify({ progress: 'completed' }),
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert('failed')
+            alert('oopsies')
         }
     }
 }
