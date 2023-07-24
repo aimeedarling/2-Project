@@ -1,33 +1,50 @@
 {{#if logged_in}}
 <!---create tasks--->
 
-<section>
+<section class="create-task">
   <h2>Create A Task:</h2>
   <div class="input">
     <input type="text" class="form-control" placeholder="Enter task here..." id="task" autofocus>
     <span class="input-group-btn">
-      <button id="create" class="btn btn-primary" type="button" name="submit">Create</button>
+      <button id="create" class="button is-success is-large" type="button" name="submit">Create</button>
     </span>
   </div>
 </section>
 
 <!---total tasks to-do--->
-<section class = "on-click">
+<div class="card">
   
-  <h2>Tasks Todo:</h2>
-  {{#each todos}}
+  <section class = "on-click">
+    <header class="card-header">
+      <section class="card-header-title">
+        <h3>Tasks Todo:</h3>
+      </section>
+    </header>
 
-  <div class="task clearfix">
-    <span>{{task_name}}</span>
-    <div class="btn-group pull-right" role="group" aria-label="...">
-      <p>{{id}}</p>
-      <button data-id="{{id}}" type="button" class="btn-inprogress">In-Progress</button>
-      <button data-id="{{id}}" type="button" class="btn-delete">Delete</button>
+    <div class="card-content">
+      <div class="content">
+        {{#each todos}}
+
+        <div class="task clearfix todo-list">
+          <span>{{task_name}}</span>
+          <div class="btn-group pull-right" role="group" aria-label="...">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+          <footer class="card-footer">
+            <button data-id="{{id}}" type="button" class="btn-inprogress card-footer-item">In-Progress</button>
+            <button data-id="{{id}}" type="button" class="btn-delete card-footer-item">Delete</button>
+          </footer>
+        
+      
 
-  {{/each}}
-</section>
+          {{/each}}
+     
+    
+    
+  </section>
+</div>
 
 <!---in-progress tasks--->
 <section>
