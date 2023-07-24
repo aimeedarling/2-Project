@@ -1,6 +1,6 @@
 {{#if logged_in}}
-<!---create tasks--->
 
+<!---create tasks--->
 <section class="create-task">
   <h2>Create A Task:</h2>
   <div class="input">
@@ -11,20 +11,18 @@
   </div>
 </section>
 
-<!---total tasks to-do--->
+
+{{!-- .todo section  --}}
 <div class="card">
-  
-  <section class = "on-click">
+  <section class="on-click">
     <header class="card-header">
       <section class="card-header-title">
         <h3>Tasks Todo:</h3>
       </section>
     </header>
-
     <div class="card-content">
       <div class="content">
         {{#each todos}}
-
         <div class="task clearfix todo-list">
           <span>{{task_name}}</span>
           <div class="btn-group pull-right" role="group" aria-label="...">
@@ -32,17 +30,11 @@
         </div>
       </div>
     </div>
-          <footer class="card-footer">
-            <button data-id="{{id}}" type="button" class="btn-inprogress card-footer-item">In-Progress</button>
-            <button data-id="{{id}}" type="button" class="btn-delete card-footer-item">Delete</button>
-          </footer>
-        
-      
-
-          {{/each}}
-     
-    
-    
+    <footer class="card-footer">
+      <button data-id="{{id}}" type="button" class="btn-inprogress card-footer-item">In-Progress</button>
+      <button data-id="{{id}}" type="button" class="btn-delete card-footer-item">Delete</button>
+    </footer>
+    {{/each}}
   </section>
 </div>
 
@@ -50,16 +42,14 @@
 <section>
   <hr>
   <h2>Tasks In-Progress:</h2>
-  {{#each inProgress as |todo| }}
-  {{#if todo.in_progress}}
+  {{#each inProgress}}
   <div class="task clearfix">
-    <ul>{{todo.task_name}}</ul>
-    <div class="btn-group pull-right" role="group" aria-label="...">
+    <ul>{{task_name}}</ul>
+    <div class="btn-group pull-right" role="group" aria-\qlabel="...">
       <button id="completed-btn" data-id="{{id}}" type="button" class="btn-complete">Completed</button>
       <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
     </div>
   </div>
-  {{/if}}
   {{/each}}
 </section>
 
@@ -67,19 +57,18 @@
 <section>
   <hr>
   <h2>Completed Tasks:</h2>
-  {{#each completed as |todo|}}
-  {{#if todo.completed}}
+  {{#each completed}}
   <div class="task clearfix">
-    <ul>{{todo.task_name}}</ul>
+    <ul>{{task_name}}</ul>
     <div class="btn-group pull-right" role="group" aria-label="...">
       <button data-id="{{todo.id}}" type="button" class="btn-delete">Delete</button>
     </div>
   </div>
-  {{/if}}
   {{/each}}
-  {{/if}}
 </section>
 </main>
 
 <script src="/js/create-task.js"></script>
 <script src="/js/progress.js"></script>
+
+{{/if}}

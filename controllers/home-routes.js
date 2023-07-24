@@ -1,19 +1,17 @@
 //routes that render handlebars -- end in res.render
 //get routes
 const router = require('express').Router()
-const { 
-    User, Task
-} = require('../models')
+const { Task} = require('../models')
 const withAuth = require('../utils/auth')
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        console.log(req.session)
         const todoData = await Task.findAll({where: {
             user_id: req.session.user_id, 
             progress:'todo' }})
-        console.log(todoData)
+
         const todos = todoData.map(todo => todo.get({plain: true}))
+        
         const inProgressData = await Task.findAll({ where: { 
             user_id: req.session.user_id, 
             progress: 'in-progress' } })
