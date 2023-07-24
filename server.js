@@ -20,7 +20,7 @@ const sess = {
     secret: process.env.SECRET,
     cookie: {
         // /TODO after testing - add cookie settings 
-        maxAge: 300000,
+        maxAge: 300000 * 60,
         http: true,
         secure: false,
         sameSite: "strict"
@@ -45,4 +45,4 @@ app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT} 🚀`));
-});
+})

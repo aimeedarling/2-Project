@@ -62,6 +62,8 @@ Resources:
 
 [Umang Agrawal - How to deploy your Node.js & MongoDB app/ REST-API to Heroku using Heroku CLI (.env variables included).](https://www.techmanyu.com/how-to-deploy-your-node-js-7678d8fc575f)
 
+[Camila Ramos Garzon - HTTP Request Methods - Get vs Put vs Post](https://www.freecodecamp.org/news/http-request-methods-explained/)
+
 ## License
 
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).

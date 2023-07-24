@@ -1,3 +1,4 @@
+
 const createFormHandler = async (event) => {
     event.preventDefault();
     console.log('click')
@@ -7,7 +8,8 @@ const createFormHandler = async (event) => {
     console.log(newTask)
 
     //need to pull this from session
-    const userId = 1
+    // const userId = req.session.user_id
+    // console.log(userId)
 
 
     //Pass progress, task_name, user_id in this fetch call
@@ -18,7 +20,7 @@ const createFormHandler = async (event) => {
         body: JSON.stringify({ 
             task_name: newTask,
             progress: 'todo',
-            user_id: userId
+           
         }),
         headers: { 'Content-Type': 'application/json' }
     });
