@@ -37,12 +37,12 @@ app.use(session(sess));
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-// Handle requests for favicon.ico
-app.get('/favicon.ico', (req, res) => res.status(204));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the favicon.ico file from the specified directory
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use(routes);
 
