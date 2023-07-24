@@ -20,7 +20,7 @@ const sess = {
     secret: process.env.SECRET,
     cookie: {
         // /TODO after testing - add cookie settings 
-        maxAge: 300000,
+        maxAge: 300000 * 60,
         http: true,
         secure: false,
         sameSite: "strict"
@@ -41,11 +41,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve the favicon.ico file from the specified directory
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT} 🚀`));
-});
+})

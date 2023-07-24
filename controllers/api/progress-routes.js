@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Task } = require('../../models');
-const withAuth = require('../../utils/auth');
+
 
 
 // router.put('/tasks/:id', async (req, res) => {
@@ -16,15 +16,21 @@ const withAuth = require('../../utils/auth');
 //     }
 // })
 
-router.put('/tasks/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
-        const task = await Task.findById(req.params.id);
-        if (!task) {
-            res.status(404).end();
-        } else {
-            Task.update(req.body, {where: { id: req.params.id }});
-            res.status(200).json(task);
-        }
+        // const task = await Task.findById(req.params.id);
+        // console.log(task)
+        const taskId = req.params.id
+        console.log(taskId)
+        // if (!task) {
+        //     res.status(404).end();
+        // } else {
+        const updatedTask = await Task.update({
+            progress: req.body.progress
+        },
+            { where: { id: taskId } });
+        res.status(200).json(updatedTask);
+        // }
     } catch (error) {
         res.status(400).json(error);
     }
@@ -47,21 +53,21 @@ router.put('/tasks/:id', async (req, res) => {
 //     }
 // })
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const deleteTask = await Task.destroy({
             where: {
-                id: req.params.id,
-                user_id: req.session.user_id,
+                id: req.params.id
+                // user_id: req.session.user_id,
             },
         });
 
-        if (!deleteTask) {
-            res.status(404).json({ message: 'Failed!' });
-            return;
-        }
+        // if (!deleteTask) {
+        //     res.status(404).json({ message: 'Failed!' });
+        //     return;
+        // }
 
-        res.status(200).reload();
+        res.status(200).json(deleteTask);
     } catch (error) {
         res.status(500).json(error);
     }

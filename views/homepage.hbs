@@ -16,9 +16,11 @@
   
   <h2>Tasks Todo:</h2>
   {{#each todos}}
+
   <div class="task clearfix">
     <span>{{task_name}}</span>
     <div class="btn-group pull-right" role="group" aria-label="...">
+      <p>{{id}}</p>
       <button data-id="{{id}}" type="button" class="btn-inprogress">In-Progress</button>
       <button data-id="{{id}}" type="button" class="btn-delete">Delete</button>
     </div>

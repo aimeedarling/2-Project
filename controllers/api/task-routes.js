@@ -10,7 +10,7 @@ router.post('/', withAuth, async (req, res) => {
         const newTask = await Task.create({
             task_name: req.body.task_name,
             progress: req.body.progress,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         });
         res.status(200).json(newTask);
     } catch (error) {
@@ -21,22 +21,22 @@ router.post('/', withAuth, async (req, res) => {
 /*
  * This route gets all tasks.
  */
-router.get('/', async (req, res) => {
-    const tasks = await Task.find();
-    res.status(200).json(tasks);
-});
+// router.get('/', async (req, res) => {
+//     const tasks = await Task.find();
+//     res.status(200).json(tasks);
+// });
 
 /*
  * This route gets a specific task by id.
  */
-router.get('/:id', async (req, res) => {
-    const task = await Task.findById(req.params.id);
-    if (!task) {
-        res.status(404).end();
-    } else {
-        res.status(200).json(task);
-    }
-});
+// router.get('/:id', async (req, res) => {
+//     const task = await Task.findById(req.params.id);
+//     if (!task) {
+//         res.status(404).end();
+//     } else {
+//         res.status(200).json(task);
+//     }
+// });
 
 /*
  * This route updates a specific task by id.
@@ -59,15 +59,15 @@ router.get('/:id', async (req, res) => {
 /*
  * This route deletes a specific task by id.
  */
-router.delete('/:id', async (req, res) => {
-    const task = await Task.findById(req.params.id);
-    if (!task) {
-        res.status(404).end();
-    } else {
-        await task.remove();
-        res.status(200).end();
-    }
-});
+// router.delete('/:id', async (req, res) => {
+//     const task = await Task.findById(req.params.id);
+//     if (!task) {
+//         res.status(404).end();
+//     } else {
+//         await task.remove();
+//         res.status(200).end();
+//     }
+// });
 
 
 
