@@ -6,7 +6,7 @@ const inProgressHandler = async (event) => {
         console.log(id)
         // const progress = {progress: 'in-progress'}
 
-        const response = await fetch(`/api/tasks/${id}`, {
+        const response = await fetch(`/tasks/${id}`, {
             method: 'PUT',
             body: JSON.stringify('in-progress'), 
             headers: { 'Content-Type': 'application/json'}
