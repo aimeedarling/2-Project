@@ -15,7 +15,6 @@ html {
   height: 100%;
   font-size: 62.5%;
   scroll-behavior: smooth;
-
 }
 
 .is-primary, #nav-title {
@@ -58,7 +57,6 @@ body {
   margin-top: 30px;
   font-size: 20px;
   font-weight: bolder;
-
 }
 
 .create-task {
@@ -75,8 +73,7 @@ body {
 
 
 .todo-list span {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .page-title {
