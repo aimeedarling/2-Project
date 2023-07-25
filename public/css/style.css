@@ -78,7 +78,8 @@ body {
 }
 
 .page-title {
-  /* margin-top: 4rem; */
+font-weight: 600;
+font-size: 3rem !important;
 
 }
 
