@@ -1,3 +1,5 @@
+//login button function
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -23,6 +25,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+//signup button functionality 
 const signupFormHandler = async (event) => {
     event.preventDefault();
 

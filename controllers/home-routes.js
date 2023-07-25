@@ -4,6 +4,7 @@ const router = require('express').Router()
 const { Task} = require('../models')
 const withAuth = require('../utils/auth')
 
+//get tasks by each progress status 'todo', 'in-progress', and 'completed' that belongs to each user
 router.get('/', withAuth, async (req, res) => {
     try {
         const todoData = await Task.findAll({where: {
