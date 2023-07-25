@@ -12,6 +12,7 @@ Please visit the deployed app [here](https://stark-crag-81936-8a96c55cd3fa.herok
 
 <img width="918" alt="image" src="https://github.com/aimeedarling/productivity-pal/assets/127796444/4ec86650-1b23-46b4-8acf-06e42d49628d">
 
+Simply visit [app](https://stark-crag-81936-8a96c55cd3fa.herokuapp.com/), completed the sign up form or log in. You will then be directed to your personal todo list where you can create tasks, update from "todo" to "In Progress" to "Completed" and then delete task that you no longer need to keep track of.
 
 ## Credits
 
