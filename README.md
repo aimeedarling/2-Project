@@ -10,6 +10,7 @@ Please visit the deployed app [here](https://stark-crag-81936-8a96c55cd3fa.herok
 
 ## Usage
 
+<img width="918" alt="image" src="https://github.com/aimeedarling/productivity-pal/assets/127796444/4ec86650-1b23-46b4-8acf-06e42d49628d">
 
 
 ## Credits
