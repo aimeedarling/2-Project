@@ -1,11 +1,7 @@
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
-  --quatrinary: #6c6b67;
-  --light: #e3e4e3;
-  --dark: #182c23;
-  --error: rgb(228, 46, 1);
+  --primary: #E8E1EF;
+  --light: white;
+  --dark: #675874;
   --border-radius: 0.3rem;
 }
 
@@ -22,6 +18,15 @@ html {
 
 }
 
+.is-primary, #nav-title {
+  color: #675874 !important
+}
+
+.button {
+    background-color: white !important;
+    border: 2px solid #675874 !important;
+}
+
 
 body {
   font-family: Arial;
@@ -30,7 +35,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: white;
+  background-color: #E8E1EF !important;
   align-items: center;
   font-size: 2rem !important;
 }
@@ -41,22 +46,19 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-content: center;
-  margin-top: 3rem;
+  margin-top: 3rem
 }
 
 .main {
   margin-top: 4rem;
   width: 50%;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: center;
 }
 
 .card-header {
   margin-top: 30px;
   font-size: 20px;
   font-weight: bolder;
-  /* margin-bottom: 30px; */
+
 }
 
 .create-task {
@@ -78,19 +80,12 @@ body {
 }
 
 .page-title {
-font-weight: 600;
-font-size: 3rem !important;
+  font-weight: 600;
+  font-size: 3.5rem !important;
 
 }
 
-.login-form {
-  /* justify-self: center; */
 
-}
-
-.temp-notice {
-  font-size: 30px;
-}
 
 #logout {
   align-self: center;
@@ -100,12 +95,16 @@ font-size: 3rem !important;
   margin-top: 20px;
   display: block;
   width: 100%;
+  background-color: white;
+  border: 2px solid #675874;
 }
 
 #signup-button {
   margin-top: 20px;
   display: block;
   width: 100%;
+  background-color: white;
+  border: 2px solid #675874;
 }
 
 
@@ -114,7 +113,9 @@ font-size: 3rem !important;
 }
 
 @media screen and (max-width: 600px) {
-  .nav-bar, .create-task {
+
+  .nav-bar,
+  .create-task {
 
     flex-direction: column;
   }
