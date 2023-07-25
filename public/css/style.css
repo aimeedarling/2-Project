@@ -41,6 +41,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-content: center;
+  margin-top: 3rem;
 }
 
 .main {
@@ -70,10 +71,6 @@ body {
   padding: 0 !important;
 }
 
-footer button {
-  /* background-color: white; */
-
-}
 
 .todo-list span {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -81,12 +78,12 @@ footer button {
 }
 
 .page-title {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 
 }
 
 .login-form {
-  justify-self: right;
+  /* justify-self: center; */
 
 }
 
@@ -94,6 +91,9 @@ footer button {
   font-size: 30px;
 }
 
+#logout {
+  align-self: center;
+}
 
 #login-button {
   margin-top: 20px;
@@ -110,4 +110,11 @@ footer button {
 
 #email-login {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar, .create-task {
+
+    flex-direction: column;
+  }
 }
