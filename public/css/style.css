@@ -32,6 +32,16 @@ body {
   justify-content: flex-start;
   background-color: white;
   align-items: center;
+  font-size: 2rem !important;
+}
+
+.nav-bar {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 3rem;
 }
 
 .main {
@@ -50,11 +60,6 @@ body {
 }
 
 .create-task {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
-  margin-bottom: 20px;
-  /* border-color: green; */
-  margin-right: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,12 +68,9 @@ body {
 
 .card-content {
   margin-top: 30px;
+  padding: 0 !important;
 }
 
-footer button {
-  /* background-color: white; */
-
-}
 
 .todo-list span {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -76,12 +78,13 @@ footer button {
 }
 
 .page-title {
-  margin-top: 4rem;
+font-weight: 600;
+font-size: 3rem !important;
 
 }
 
 .login-form {
-  justify-self: right;
+  /* justify-self: center; */
 
 }
 
@@ -89,6 +92,9 @@ footer button {
   font-size: 30px;
 }
 
+#logout {
+  align-self: center;
+}
 
 #login-button {
   margin-top: 20px;
@@ -105,4 +111,11 @@ footer button {
 
 #email-login {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar, .create-task {
+
+    flex-direction: column;
+  }
 }
